@@ -1,0 +1,68 @@
+/* &display=swap */
+@import "null.css";
+@import url("https://fonts.googleapis.com/css?family=Lato:regular,700,900&display=swap");
+
+body {
+	font-family: Lato, serif;
+}
+
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	max-width: 810px;
+	margin: 0 auto;
+}
+
+.main img {
+	margin: 0px 0px 60px 0px;
+}
+
+.title {
+	margin: 0px 0px 26px 0px;
+	padding: 190px 0px 0px 0px;
+	font-weight: 900;
+	font-size: 46px;
+	line-height: calc(60 / 40);
+	color: #1e212c;
+}
+
+.date {
+	color: #787a80;
+	margin: 0px 0px 40px 0px;
+}
+
+.month {
+	margin: 0px 24px 0px 0px;
+	padding: 0px 0px 0px 24px;
+	background: url("../img/calendar.svg") 0 0 no-repeat;
+}
+.time {
+	padding: 0px 0px 0px 24px;
+	background: url("../img/clock.svg") 0 0 no-repeat;
+}
+
+.bold-text {
+	margin: 0px 0px 24px 0px;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: calc(30 / 20);
+}
+
+.ppl {
+	padding: 0px 0px 0px 58px;
+	background: url("../img/braces.svg") 0 0 no-repeat;
+}
+
+.text {
+	margin: 0px 0px 24px 0px;
+	line-height: calc(25.6 / 16);
+}
+.list {
+	margin: 0px 0px 24px 0px;
+}
+.list-item {
+	background: url("../img/mark.svg") 0 0 no-repeat;
+	margin: 0px 0px 4px 0px;
+	padding: 0px 0px 0px 32px;
+	line-height: calc(26 / 16);
+}
