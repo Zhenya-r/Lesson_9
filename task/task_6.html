@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 6</title>
+</head>
+
+<body>
+   <a href="../index.html">До задач</a>
+   <p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2 </p>
+
+   <script>
+
+      const arr = createArrayElements(10)
+
+      function getRandomNumb(minValue, maxValue) {
+         return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+      }
+
+      function createArrayElements(amountElements) {
+         const array = []
+         for (let i = 0; i < amountElements; i++) {
+            array.push(getRandomNumb(-100, 100))
+         }
+         return array
+      }
+
+      function productElementsWhichMoreThanElement(arrayElemenst, indexElement) {
+         /*
+         for (let i = 0; i < arrayElemenst.length; i++) {
+            if (arr[i] > arrayElemenst[indexElement]) arr[i] *= 2
+         }
+         */
+
+         arrayElemenst.forEach((element, index, arr) => {
+            if (element > arrayElemenst[indexElement]) arr[index] *= 2
+         });
+      }
+
+      document.write(`${arr} <br>`)
+
+      productElementsWhichMoreThanElement(arr, 0)
+
+      document.write(arr)
+
+
+
+   </script>
+
+</body>
+
+</html>

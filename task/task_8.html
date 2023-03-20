@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 7</title>
+</head>
+
+<body>
+   <a href="../index.html">До задач</a>
+   <p>Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</p>
+
+   <script>
+
+      function getRandomElement(amountElements, arrayElements) {
+
+         let element = ''
+
+         for (let i = 0; i < amountElements; i++) {
+            const getRandomArrayIndex = Math.floor(Math.random() * arrayElements.length)
+            element += arrayElements[getRandomArrayIndex]
+         }
+
+         return element
+      }
+
+      function createCarNumbers(amountCarNumbers) {
+
+         const carNumbersList = []
+
+         const regionRegistrationCode = ['АК', 'КК', 'АА', 'КА', 'АВ', 'КВ', 'АС', 'КС', 'АЕ', 'КЕ', 'АН', 'КН', 'АІ', 'КІ', 'АМ', 'КМ', 'АО', 'КО', 'АР', 'КР', 'АТ', 'КТ', 'ВА', 'НА', 'ВВ', 'НВ', 'ВС', 'НС', 'ВЕ', 'НЕ', 'ВН', 'НН', 'ВІ', 'НІ', 'ВК', 'НК', 'ВМ', 'НМ', 'ВО', 'НО', 'АХ', 'КХ', 'ВТ', 'НТ', 'ВХ', 'НХ', 'СА', 'ІА', 'СВ', 'ІВ', 'СЕ', 'ІЕ', 'СН', 'ІН']
+         const registerNumber = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+         const serialNumber = ['А', 'В', 'Е', 'I', 'К', 'М', 'Н', 'О', 'Р', 'С', 'Т', 'Х']
+
+         for (let i = 0; i < amountCarNumbers; i++) {
+            let carNumber = getRandomElement(1, regionRegistrationCode) + getRandomElement(4, registerNumber) + getRandomElement(2, serialNumber)
+            carNumbersList.push(carNumber)
+         }
+
+         return carNumbersList
+      }
+
+      function getCarNumberFirstLetter_$(arrayCarNumbers, letter) {
+
+         const сarNumberFirstLetter_$ = arrayCarNumbers.filter(element => element[0] === letter)
+
+         if (сarNumberFirstLetter_$.length) {
+            return сarNumberFirstLetter_$
+         }
+
+         return `В масиві відсутній номери які починаються з ${letter}`
+      }
+
+      document.write(getCarNumberFirstLetter_$(createCarNumbers(10), 'А'));
+
+   </script>
+</body>
+
+</html>

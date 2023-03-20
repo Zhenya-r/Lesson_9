@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 10</title>
+</head>
+
+<body>
+   <a href="../index.html">До задач</a>
+   <p>Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.</p>
+
+   <script>
+
+      function getRandomNumb(minValue, maxValue) {
+         return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+      }
+
+      function getArrayPrices(amountElementsArray) {
+         const arrayPrices = []
+
+         for (let i = 0; i < amountElementsArray; i++) {
+            arrayPrices.push(getRandomNumb(1000, 10000))
+         }
+
+         return arrayPrices
+
+      }
+
+      function getTaxes(arrayPrice, percentTax) {
+         const arrayTaxes = arrayPrice.map(element => element * percentTax / 100)
+         return arrayTaxes
+      }
+
+      function getSummTaxes(arrayPrice, percentTax) {
+         let summTaxes = 0
+         for (const price of arrayPrice) {
+            summTaxes += (price * percentTax / 100)
+         }
+         return summTaxes
+      }
+
+      const arrayPrices = getArrayPrices(10)
+
+      document.write(`
+      Масив цін - ${arrayPrices} <br> 
+      Масив податку - ${getTaxes(arrayPrices, 20)} <br> 
+      Сумма загального податку - ${getSummTaxes(arrayPrices, 20)}
+      `)
+
+
+   </script>
+
+</body>
+
+</html>
